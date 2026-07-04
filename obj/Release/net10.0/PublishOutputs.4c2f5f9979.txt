@@ -1,0 +1,4 @@
+C:\Users\USER\Desktop\WeatherApp\published\wwwroot\index.html
+C:\Users\USER\Desktop\WeatherApp\published\WeatherApp.runtimeconfig.json
+C:\Users\USER\Desktop\WeatherApp\published\dotnet.js
+C:\Users\USER\Desktop\WeatherApp\published\web.config

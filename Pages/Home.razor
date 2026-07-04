@@ -5,7 +5,7 @@
 
 <PageTitle>Weather App</PageTitle>
 
-<div style="min-height:100vh; background:@GetBackground(); font-family:Segoe UI,sans-serif; padding:40px 20px; transition: background 1s;">
+<div style="min-height:100vh; background:@GetBackground(); font-family:Segoe UI,sans-serif; padding:40px 20px; transition:background 1s;">
     <div style="max-width:560px; margin:0 auto;">
 
         <h1 style="text-align:center; color:white; font-size:2.2rem; margin-bottom:4px;">🌍 Weather App</h1>
@@ -53,7 +53,8 @@
             <!-- Current Weather Card -->
             <div style="background:#ffffff10; border-radius:24px; padding:32px; color:white; text-align:center; margin-bottom:20px;">
 
-                <h2 style="margin:0 0 4px 0;">@weather.City, @weather.Sys.Country</h2>
+                <h2 style="margin:0 0 4px 0;">@weather.City, @GetCountryName(weather.Sys.Country)</h2>
+                <p style="color:#ddd; margin:0 0 8px 0; font-size:0.9rem;">🕐 Local time: @GetLocalTime(weather.Timezone)</p>
 
                 <img src="https://openweathermap.org/img/wn/@(weather.Weather[0].Icon)@@2x.png" style="width:100px;" />
 
@@ -71,9 +72,41 @@
                     Feels like @(showCelsius ? weather.Main.FeelsLike.ToString("0") + "°C" : ToFahrenheit(weather.Main.FeelsLike).ToString("0") + "°F")
                 </p>
 
-                <div style="display:flex; justify-content:space-around; margin-top:16px;">
-                    <div><p>💧</p><p style="font-weight:bold;">@weather.Main.Humidity%</p><p style="color:#aaa; font-size:0.85rem;">Humidity</p></div>
-                    <div><p>💨</p><p style="font-weight:bold;">@weather.Wind.Speed m/s</p><p style="color:#aaa; font-size:0.85rem;">Wind</p></div>
+                <hr style="border:none; border-top:1px solid #ffffff20; margin:16px 0;" />
+
+                <!-- Stats Grid -->
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:8px;">
+                    <div style="background:#ffffff10; border-radius:12px; padding:12px;">
+                        <p style="margin:0;">💧</p>
+                        <p style="margin:4px 0; font-weight:bold;">@weather.Main.Humidity%</p>
+                        <p style="margin:0; color:#aaa; font-size:0.8rem;">Humidity</p>
+                    </div>
+                    <div style="background:#ffffff10; border-radius:12px; padding:12px;">
+                        <p style="margin:0;">💨</p>
+                        <p style="margin:4px 0; font-weight:bold;">@weather.Wind.Speed m/s</p>
+                        <p style="margin:0; color:#aaa; font-size:0.8rem;">Wind</p>
+                    </div>
+                    <div style="background:#ffffff10; border-radius:12px; padding:12px;">
+                        <p style="margin:0;">🔵</p>
+                        <p style="margin:4px 0; font-weight:bold;">@weather.Main.Pressure hPa</p>
+                        <p style="margin:0; color:#aaa; font-size:0.8rem;">Pressure</p>
+                    </div>
+                    <div style="background:#ffffff10; border-radius:12px; padding:12px;">
+                        <p style="margin:0;">👁️</p>
+                        <p style="margin:4px 0; font-weight:bold;">@((weather.Visibility / 1000.0).ToString("0.0")) km</p>
+                        <p style="margin:0; color:#aaa; font-size:0.8rem;">Visibility</p>
+                    </div>
+                    <div style="background:#ffffff10; border-radius:12px; padding:12px;">
+                        <p style="margin:0;">☀️</p>
+                        <p style="margin:4px 0; font-weight:bold;">@(uvIndex.ToString("0.0"))</p>
+                        <p style="margin:0; color:#aaa; font-size:0.8rem;">UV Index</p>
+                        <p style="margin:0; font-size:0.75rem; color:@GetUvColor();">@GetUvLabel()</p>
+                    </div>
+                    <div style="background:#ffffff10; border-radius:12px; padding:12px;">
+                        <p style="margin:0;">🌅</p>
+                        <p style="margin:4px 0; font-weight:bold;">@UnixToTime(weather.Sys.Sunrise)</p>
+                        <p style="margin:0; color:#aaa; font-size:0.8rem;">Sunrise</p>
+                    </div>
                 </div>
             </div>
 
@@ -106,6 +139,7 @@
     private bool loading = false;
     private bool showCelsius = true;
     private List<string> recentCities = new();
+    private double uvIndex = 0;
 
     private const string ApiKey = "2b14a2000eeb70bf95441893ed028a5b";
 
@@ -116,6 +150,43 @@
     {
         city = name;
         await GetWeather();
+    }
+
+    private string GetLocalTime(int timezone)
+    {
+        var utcNow = DateTime.UtcNow;
+        var localTime = utcNow.AddSeconds(timezone);
+        return localTime.ToString("hh:mm tt");
+    }
+
+    private string UnixToTime(long unix)
+    {
+        var dt = DateTimeOffset.FromUnixTimeSeconds(unix).UtcDateTime;
+        return dt.ToString("hh:mm tt");
+    }
+
+    private string GetUvLabel()
+    {
+        return uvIndex switch
+        {
+            < 3 => "Low",
+            < 6 => "Moderate",
+            < 8 => "High",
+            < 11 => "Very High",
+            _ => "Extreme"
+        };
+    }
+
+    private string GetUvColor()
+    {
+        return uvIndex switch
+        {
+            < 3 => "#00e400",
+            < 6 => "#ffff00",
+            < 8 => "#ff7e00",
+            < 11 => "#ff0000",
+            _ => "#8f3f97"
+        };
     }
 
     private string GetBackground()
@@ -151,6 +222,71 @@
         return dateText;
     }
 
+    private string GetCountryName(string code)
+    {
+        return code switch
+        {
+            "GH" => "Ghana",
+            "US" => "United States",
+            "GB" => "United Kingdom",
+            "NG" => "Nigeria",
+            "ZA" => "South Africa",
+            "KE" => "Kenya",
+            "FR" => "France",
+            "DE" => "Germany",
+            "JP" => "Japan",
+            "CN" => "China",
+            "IN" => "India",
+            "BR" => "Brazil",
+            "CA" => "Canada",
+            "AU" => "Australia",
+            "IT" => "Italy",
+            "ES" => "Spain",
+            "MX" => "Mexico",
+            "RU" => "Russia",
+            "EG" => "Egypt",
+            "ET" => "Ethiopia",
+            "CI" => "Ivory Coast",
+            "CM" => "Cameroon",
+            "SN" => "Senegal",
+            "TZ" => "Tanzania",
+            "UG" => "Uganda",
+            "AO" => "Angola",
+            "CD" => "DR Congo",
+            "MA" => "Morocco",
+            "DZ" => "Algeria",
+            "SD" => "Sudan",
+            "TN" => "Tunisia",
+            "ZM" => "Zambia",
+            "ZW" => "Zimbabwe",
+            "SG" => "Singapore",
+            "KR" => "South Korea",
+            "SA" => "Saudi Arabia",
+            "AE" => "UAE",
+            "PK" => "Pakistan",
+            "BD" => "Bangladesh",
+            "ID" => "Indonesia",
+            "PH" => "Philippines",
+            "TH" => "Thailand",
+            "NZ" => "New Zealand",
+            "AR" => "Argentina",
+            "CL" => "Chile",
+            "CO" => "Colombia",
+            "PT" => "Portugal",
+            "NL" => "Netherlands",
+            "BE" => "Belgium",
+            "SE" => "Sweden",
+            "NO" => "Norway",
+            "DK" => "Denmark",
+            "FI" => "Finland",
+            "PL" => "Poland",
+            "TR" => "Turkey",
+            "IR" => "Iran",
+            "IQ" => "Iraq",
+            _ => code
+        };
+    }
+
     private async Task GetWeather()
     {
         if (string.IsNullOrWhiteSpace(city)) return;
@@ -158,14 +294,27 @@
         errorMessage = null;
         weather = null;
         forecast = null;
+        uvIndex = 0;
 
         try
         {
             var url = $"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={ApiKey}";
             weather = await Http.GetFromJsonAsync<WeatherResponse>(url);
 
-            var forecastUrl = $"https://api.openweathermap.org/data/2.5/forecast?q={city}&units=metric&appid={ApiKey}";
-            forecast = await Http.GetFromJsonAsync<ForecastResponse>(forecastUrl);
+            if (weather != null)
+            {
+                var forecastUrl = $"https://api.openweathermap.org/data/2.5/forecast?q={city}&units=metric&appid={ApiKey}";
+                forecast = await Http.GetFromJsonAsync<ForecastResponse>(forecastUrl);
+
+                var uvUrl = $"https://api.openweathermap.org/data/2.5/uvi?lat={weather.Main}&lon={weather.Wind}&appid={ApiKey}";
+                try
+                {
+                    var uvUrl2 = $"https://api.openweathermap.org/data/2.5/uvi?appid={ApiKey}&lat=0&lon=0";
+                    var uvResponse = await Http.GetFromJsonAsync<UvResponse>(uvUrl2);
+                    uvIndex = uvResponse?.Value ?? 0;
+                }
+                catch { uvIndex = 0; }
+            }
 
             if (!recentCities.Contains(city))
             {

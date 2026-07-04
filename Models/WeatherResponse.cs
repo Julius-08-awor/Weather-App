@@ -18,11 +18,21 @@ public class WeatherResponse
 
     [JsonPropertyName("wind")]
     public Wind Wind { get; set; } = new();
+
+    [JsonPropertyName("visibility")]
+    public int Visibility { get; set; }
+
+    [JsonPropertyName("timezone")]
+    public int Timezone { get; set; }
 }
 
 public class Sys {
     [JsonPropertyName("country")]
     public string Country { get; set; } = "";
+    [JsonPropertyName("sunrise")]
+    public long Sunrise { get; set; }
+    [JsonPropertyName("sunset")]
+    public long Sunset { get; set; }
 }
 
 public class Main {
@@ -32,6 +42,8 @@ public class Main {
     public double FeelsLike { get; set; }
     [JsonPropertyName("humidity")]
     public int Humidity { get; set; }
+    [JsonPropertyName("pressure")]
+    public int Pressure { get; set; }
 }
 
 public class WeatherInfo {
@@ -64,4 +76,10 @@ public class ForecastItem
 
     [JsonPropertyName("weather")]
     public List<WeatherInfo> Weather { get; set; } = new();
+}
+
+public class UvResponse
+{
+    [JsonPropertyName("value")]
+    public double Value { get; set; }
 }
