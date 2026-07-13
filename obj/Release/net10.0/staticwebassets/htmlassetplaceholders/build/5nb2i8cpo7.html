@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
-    <base href="/Weather-App/" />
-    <link href="_framework/dotnet.z1bwycux99.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-Cc465jpfXvfTvELu48ovTjufZjAQhVTvuc1xew0Fgok=" />
+   <base href="/Weather-App/" />
+    <link href="_framework/dotnet.xi38290esh.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-2UlgugsGSspH1pPsbgRN+1ogW/zZ4JZdUGyt5hQe/68=" />
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -16,7 +16,7 @@
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.958z1vx7fr.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.ikrs475e5v.js",
     "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.a6jcqbs390.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.z1bwycux99.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.xi38290esh.js",
     "./lib/bootstrap/dist/js/bootstrap.js": "./lib/bootstrap/dist/js/bootstrap.5d0yzkekv5.js",
     "./lib/bootstrap/dist/js/bootstrap.bundle.js": "./lib/bootstrap/dist/js/bootstrap.bundle.85dgjsq755.js",
     "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js",
@@ -28,12 +28,12 @@
   "integrity": {
     "./_framework/blazor.webassembly.958z1vx7fr.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
     "./_framework/blazor.webassembly.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
-    "./_framework/dotnet.js": "sha256-Cc465jpfXvfTvELu48ovTjufZjAQhVTvuc1xew0Fgok=",
+    "./_framework/dotnet.js": "sha256-2UlgugsGSspH1pPsbgRN+1ogW/zZ4JZdUGyt5hQe/68=",
     "./_framework/dotnet.native.ikrs475e5v.js": "sha256-kkp5wX0htwkBcZt5WmEiKmhBqjqdCJtGc+koldfyoDQ=",
     "./_framework/dotnet.native.js": "sha256-kkp5wX0htwkBcZt5WmEiKmhBqjqdCJtGc+koldfyoDQ=",
     "./_framework/dotnet.runtime.a6jcqbs390.js": "sha256-7i3usfTrnzC/9qWO4si5Bw4w7D9fUSnSBdhQ47blX2M=",
     "./_framework/dotnet.runtime.js": "sha256-7i3usfTrnzC/9qWO4si5Bw4w7D9fUSnSBdhQ47blX2M=",
-    "./_framework/dotnet.z1bwycux99.js": "sha256-Cc465jpfXvfTvELu48ovTjufZjAQhVTvuc1xew0Fgok=",
+    "./_framework/dotnet.xi38290esh.js": "sha256-2UlgugsGSspH1pPsbgRN+1ogW/zZ4JZdUGyt5hQe/68=",
     "./lib/bootstrap/dist/js/bootstrap.5d0yzkekv5.js": "sha256-pxYvfpIYKWykWk7yekBNOAboswBij3inSe8amhnFWsc=",
     "./lib/bootstrap/dist/js/bootstrap.bundle.85dgjsq755.js": "sha256-dBY/6wSUpBmYIBqYBzucAkgxE4Z9db2VFPtGOIkyKfo=",
     "./lib/bootstrap/dist/js/bootstrap.bundle.js": "sha256-dBY/6wSUpBmYIBqYBzucAkgxE4Z9db2VFPtGOIkyKfo=",
@@ -65,6 +65,14 @@
         <span class="dismiss">🗙</span>
     </div>
     <script src="_framework/blazor.webassembly.958z1vx7fr.js"></script>
+<script>
+    window.getLocation = () => new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+            p => resolve({ lat: p.coords.latitude, lon: p.coords.longitude }),
+            e => reject(e)
+        );
+    });
+</script>
 </body>
 
 </html>
