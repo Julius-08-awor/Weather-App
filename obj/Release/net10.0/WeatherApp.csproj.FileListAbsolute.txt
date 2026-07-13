@@ -206,9 +206,6 @@ C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\dotnet.r
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
-C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.zqw1af89p4.wasm
-C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.9wgsynaqll.pdb
-C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\dotnet.f57xam8w3u.js
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\blazor.webassembly.958z1vx7fr.js.gz
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.wp5b4xwrtz.wasm.gz
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.4payhwuyuh.wasm.gz
@@ -416,9 +413,6 @@ C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\dotnet.r
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
-C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.zqw1af89p4.wasm.gz
-C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.9wgsynaqll.pdb.gz
-C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\dotnet.f57xam8w3u.js.gz
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\WeatherApp.staticwebassets.runtime.json
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\WeatherApp.staticwebassets.endpoints.json
 C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\WeatherApp.dll
@@ -1105,10 +1099,6 @@ C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\c0mbm38x7d-{0}-l
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\h2ckqcsja6-{0}-tjcz0u77k5-tjcz0u77k5.gz
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\djg06dcznh-{0}-tptq2av103-tptq2av103.gz
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\39zpv5edcj-{0}-lfu7j35m59-lfu7j35m59.gz
-C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\hv093d9wvs-{0}-zqw1af89p4-zqw1af89p4.gz
-C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\9z6otnthew-{0}-9wgsynaqll-9wgsynaqll.gz
-C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\826wxl491k-{0}-f57xam8w3u-f57xam8w3u.gz
-C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\iqukwovbgi-{0}-qiv8lqqibu-qiv8lqqibu.gz
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\staticwebassets.build.json
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\staticwebassets.build.json.cache
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\staticwebassets.development.json
@@ -1119,3 +1109,13 @@ C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\WeatherApp.dll
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\refint\WeatherApp.dll
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\WeatherApp.pdb
 C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\ref\WeatherApp.dll
+C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.o9r9vz3k8x.wasm
+C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.b2wpwlom7c.pdb
+C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\dotnet.z1bwycux99.js
+C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.o9r9vz3k8x.wasm.gz
+C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\WeatherApp.b2wpwlom7c.pdb.gz
+C:\Users\USER\Desktop\WeatherApp\bin\Release\net10.0\wwwroot\_framework\dotnet.z1bwycux99.js.gz
+C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\hv093d9wvs-{0}-o9r9vz3k8x-o9r9vz3k8x.gz
+C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\9z6otnthew-{0}-b2wpwlom7c-b2wpwlom7c.gz
+C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\826wxl491k-{0}-z1bwycux99-z1bwycux99.gz
+C:\Users\USER\Desktop\WeatherApp\obj\Release\net10.0\compressed\iqukwovbgi-{0}-d141d3jwse-d141d3jwse.gz

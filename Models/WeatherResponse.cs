@@ -26,36 +26,53 @@ public class WeatherResponse
     public int Timezone { get; set; }
 }
 
-public class Sys {
+public class Sys
+{
     [JsonPropertyName("country")]
     public string Country { get; set; } = "";
+
     [JsonPropertyName("sunrise")]
     public long Sunrise { get; set; }
+
     [JsonPropertyName("sunset")]
     public long Sunset { get; set; }
 }
 
-public class Main {
+public class Main
+{
     [JsonPropertyName("temp")]
     public double Temp { get; set; }
+
     [JsonPropertyName("feels_like")]
     public double FeelsLike { get; set; }
+
     [JsonPropertyName("humidity")]
     public int Humidity { get; set; }
+
     [JsonPropertyName("pressure")]
     public int Pressure { get; set; }
+
+    [JsonPropertyName("temp_min")]
+    public double TempMin { get; set; }
+
+    [JsonPropertyName("temp_max")]
+    public double TempMax { get; set; }
 }
 
-public class WeatherInfo {
+public class WeatherInfo
+{
     [JsonPropertyName("main")]
     public string Main { get; set; } = "";
+
     [JsonPropertyName("description")]
     public string Description { get; set; } = "";
+
     [JsonPropertyName("icon")]
     public string Icon { get; set; } = "";
 }
 
-public class Wind {
+public class Wind
+{
     [JsonPropertyName("speed")]
     public double Speed { get; set; }
 }
