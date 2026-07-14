@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "WeatherApp",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-A+2endc7dZuHzs7/xjgbEiY7/OMExdtUOXc6cjyqSxQ=",
+    "hash": "sha256-NqHls2GrOTFi2CXtjZIOFmXbLk/p/xektiNDlWdLrnQ=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.ikrs475e5v.js"
@@ -1242,16 +1242,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "WeatherApp.wasm",
-        "name": "WeatherApp.ihuc5f38ue.wasm",
-        "hash": "sha256-qukxeHkfwHSyzTWLGeupPF/DVUBWehnztxmYgHZI7Ag=",
+        "name": "WeatherApp.uqr7a6u5hh.wasm",
+        "hash": "sha256-NsoFl3erhEIJLCUVR8ztgOBohhlVMOI/8Prpq36KFi0=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "WeatherApp.pdb",
-        "name": "WeatherApp.uhhtcgoikv.pdb",
-        "hash": "sha256-LjajvDCrViS4aNwqyDxG2JC9P+Cf2Q1cEJ3SIGY9r50=",
+        "name": "WeatherApp.atc8bj1772.pdb",
+        "hash": "sha256-Iia00awpGBqtf+sw9PS+FpsIPIRDmRitT+MSGOP3blM=",
         "cache": "force-cache"
       }
     ],
